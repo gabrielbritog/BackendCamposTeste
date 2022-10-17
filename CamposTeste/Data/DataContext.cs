@@ -5,6 +5,7 @@ namespace CamposTeste.Data
 {
     public class DataContext : DbContext
     {
+        //Contexto para o EntityFramework
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Venda> Vendas { get; set; }

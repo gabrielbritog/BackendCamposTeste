@@ -5,14 +5,13 @@ namespace CamposTeste.Entities
 {
     public class Venda : Entity
     {
-        [ForeignKey("Cliente")]
-        public int ClienteId { get; set; }
+        [ForeignKey("Cliente")] 
+        public int ClienteId { get; set; } //Referenciada como chave estrangeira via Annotations
         [ForeignKey("Produto")]
-        public int ProdutoId { get; set; }
+        public int ProdutoId { get; set; }//Referenciada como chave estrangeira via Annotations
         public int QtdVenda { get; set; }
-        [JsonIgnore]
-
         public DateTime DthVend { get; set; }
+        public float VlrUnitarioVenda { get; set; }
         public float VlrTotalVenda { get; set; }
 
     }

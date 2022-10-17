@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
-
+builder.Services.AddCors();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(options =>
@@ -30,6 +30,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(c =>
+{
+    c.AllowAnyHeader();
+    c.AllowAnyMethod();
+    c.AllowAnyOrigin();
+}
+);
 
 app.UseAuthorization();
 
